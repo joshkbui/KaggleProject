@@ -1,10 +1,9 @@
 ![](UTA-DataScience-Logo.png)
 
-# Project Title
+# Metastatic Cancer Diagnosis
 
-* **One Sentence Summary** Ex: This repository holds an attempt to apply LSTMs to Stock Market using data from
-"Get Rich" Kaggle challenge (provide link). 
-
+* 
+This project applies logistic regression to predict diagnoses using the "Metastatic Cancer Diagnosis" dataset from Kaggle, focusing on data cleaning, feature preparation, and performance evaluation.
 ## Overview
 
 * This section could contain a short paragraph which include the following:
