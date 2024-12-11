@@ -91,18 +91,17 @@ Data preparation: Addressed through thorough preprocessing, including scaling an
 ### Conclusions
 
 Model Performance:
-
 Logistic regression proved to be a simple yet effective approach for predicting metastatic cancer diagnoses, achieving 85% accuracy, 80% precision, and 90% ROC-AUC on the validation set.
 The high ROC-AUC indicates the model has a strong ability to distinguish between diagnosed and non-diagnosed cases.
-Feature Importance:
 
+Feature Importance:
 Features like age, income, and gender showed significant differences across target classes, highlighting their predictive potential.
 Class imbalance had a minor impact, but applying class weighting ensured the model fairly evaluated both classes.
+
 Scalability:
-
 Logistic regression was computationally efficient, making it a practical choice for this problem. Future improvements could involve more complex models, such as decision trees or neural networks, to capture non-linear patterns.
-Limitations:
 
+Limitations:
 Class imbalance in the target variable might affect generalization on unseen data.
 Additional feature engineering or inclusion of external data (e.g., medical history) could improve predictions further.
 
