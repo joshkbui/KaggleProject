@@ -43,7 +43,12 @@ Split the data into training (70%), validation (15%), and test (15%) sets to eva
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+These visualizations suggest that age, income, and to a lesser extent, gender, could be important predictors for the likelihood of diagnosis (DiagPeriodL90D). The target class imbalance indicates the need for strategies to address potential bias in the model. ![image](https://github.com/user-attachments/assets/f20e2249-264d-46ed-83d5-025ac0637137)![image](https://github.com/user-attachments/assets/7f2f3e20-8a1c-4c61-84b9-9dee093baac8)![image](https://github.com/user-attachments/assets/2e49e012-cd4d-4a5f-8901-16a00d0bff14)![image](https://github.com/user-attachments/assets/c6878928-44cd-404f-89a5-8283b6882524)![image](https://github.com/user-attachments/assets/2ea6c1a1-b862-4f16-927e-b01c2c2bfd54)
+
+
+
+
+
 
 ### Problem Formulation
 
