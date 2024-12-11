@@ -87,7 +87,7 @@ Data preparation: Addressed through thorough preprocessing, including scaling an
 
 Model Performance:
 Logistic regression proved to be a simple yet effective approach for predicting metastatic cancer diagnoses, achieving 85% accuracy, 80% precision, and 90% ROC-AUC on the validation set.
-The high ROC-AUC indicates the model has a strong ability to distinguish between diagnosed and non-diagnosed cases.
+
 
 Feature Importance:
 Features like age, income, and gender showed significant differences across target classes, highlighting their predictive potential.
