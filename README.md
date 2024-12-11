@@ -43,7 +43,7 @@ Split the data into training (70%), validation (15%), and test (15%) sets to eva
 
 #### Data Visualization
 
-These visualizations suggest that age, income, and to a lesser extent, gender, could be important predictors for the likelihood of diagnosis (DiagPeriodL90D). The target class imbalance indicates the need for strategies to address potential bias in the model. ![image](https://github.com/user-attachments/assets/f20e2249-264d-46ed-83d5-025ac0637137)![image](https://github.com/user-attachments/assets/7f2f3e20-8a1c-4c61-84b9-9dee093baac8)![image](https://github.com/user-attachments/assets/2e49e012-cd4d-4a5f-8901-16a00d0bff14)![image](https://github.com/user-attachments/assets/c6878928-44cd-404f-89a5-8283b6882524)![image](https://github.com/user-attachments/assets/2ea6c1a1-b862-4f16-927e-b01c2c2bfd54)
+These visualizations suggest that age, income, and to a lesser extent, gender, could be important predictors for the likelihood of diagnosis (DiagPeriodL90D). The target class imbalance indicates the need for strategies to address potential bias in the model. ![image](https://github.com/user-attachments/assets/f20e2249-264d-46ed-83d5-025ac0637137)![image](https://github.com/user-attachments/assets/7f2f3e20-8a1c-4c61-84b9-9dee093baac8)![image](https://github.com/user-attachments/assets/2e49e012-cd4d-4a5f-8901-16a00d0bff14)
 
 
 
@@ -73,12 +73,20 @@ Default settings for learning rate and other parameters were used to focus on ac
 
 ### Training
 
-* Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+
+Training
+How You Trained
+Software: Python with Scikit-Learn for logistic regression.
+Hardware: Standard laptop/PC with a modern CPU and 8-16 GB of RAM. No GPU was needed.
+Training Time
+Training took less than 30 seconds due to the simplicity of logistic regression and the dataset size.
+Training Curves
+Logistic regression doesn’t involve epochs, so no loss vs. epoch curves were generated. Performance was evaluated using metrics like accuracy, precision, and ROC-AUC on the validation set.
+Stopping Criteria
+Training stopped after convergence or a maximum of 1000 iterations.
+Difficulties
+Class imbalance: Resolved using class weighting.
+Data preparation: Addressed through thorough preprocessing, including scaling and encoding features.
 
 ### Performance Comparison
 
