@@ -74,10 +74,8 @@ Default settings for learning rate and other parameters were used to focus on ac
 ### Training
 
 
-Training
-How You Trained
+
 Software: Python with Scikit-Learn for logistic regression.
-Hardware: Standard laptop/PC with a modern CPU and 8-16 GB of RAM. No GPU was needed.
 Training Time
 Training took less than 30 seconds due to the simplicity of logistic regression and the dataset size.
 Training Curves
@@ -96,55 +94,230 @@ Data preparation: Addressed through thorough preprocessing, including scaling an
 
 ### Conclusions
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
+Model Performance:
+
+Logistic regression proved to be a simple yet effective approach for predicting metastatic cancer diagnoses, achieving 85% accuracy, 80% precision, and 90% ROC-AUC on the validation set.
+The high ROC-AUC indicates the model has a strong ability to distinguish between diagnosed and non-diagnosed cases.
+Feature Importance:
+
+Features like age, income, and gender showed significant differences across target classes, highlighting their predictive potential.
+Class imbalance had a minor impact, but applying class weighting ensured the model fairly evaluated both classes.
+Scalability:
+
+Logistic regression was computationally efficient, making it a practical choice for this problem. Future improvements could involve more complex models, such as decision trees or neural networks, to capture non-linear patterns.
+Limitations:
+
+Class imbalance in the target variable might affect generalization on unseen data.
+Additional feature engineering or inclusion of external data (e.g., medical history) could improve predictions further.
 
 ### Future Work
 
-* What would be the next thing that you would try.
-* What are some other studies that can be done starting from here.
+Model Improvements: Explore advanced models like random forests, gradient boosting (XGBoost), or neural networks, and optimize hyperparameters for better performance.
+
+Address Class Imbalance: Use techniques like SMOTE or ensemble methods to handle imbalance and improve predictions for minority classes.
+
+Feature Engineering: Add new patient features (e.g., medical history) and create interaction features to capture complex patterns.
+
+Validation: Apply cross-validation for robust performance evaluation and test generalization on external datasets.
+
+Broader Studies: Investigate additional outcomes, such as survival rates or treatment efficacy, and analyze feature importance across demographics.
 
 ## How to reproduce results
 
-* In this section, provide instructions at least one of the following:
-   * Reproduce your results fully, including training.
-   * Apply this package to other data. For example, how to use the model you trained.
-   * Use this package to perform their own study.
-* Also describe what resources to use for this package, if appropirate. For example, point them to Collab and TPUs.
+Setup Environment:
+
+Install required libraries: pandas, numpy, scikit-learn, and matplotlib.
+Use Python 3.8+ for compatibility.
+Obtain Data:
+
+Download the training and test datasets from the Kaggle challenge.
+Run the Code:
+
+Execute the provided preprocessing, model training, and evaluation scripts.
+Ensure the dataset file paths match your environment.
+Expected Output:
+
+The model will output performance metrics (accuracy, precision, recall, ROC-AUC) on the validation set and generate predictions for the test set.
+Applying to Other Data
+Preprocess Data:
+
+Ensure the new dataset has similar feature types (e.g., numerical and categorical).
+Apply the same cleaning steps (e.g., impute missing values, scale numerical features, and one-hot encode categorical features).
+Load Model:
+
+Use the trained logistic regression model or train a new model using the provided code.
+Run Inference:
+
+Use the model to predict outcomes on the new dataset and evaluate performance.
 
 ### Overview of files in repository
 
-* Describe the directory structure, if any.
-* List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
+utils.py:
 
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+Contains reusable helper functions for data cleaning, feature engineering, and visualization.
+preprocess.ipynb:
+
+Cleans the raw dataset, handles missing values, scales numerical features, and encodes categorical features.
+Outputs cleaned_data.csv for model training.
+visualization.ipynb:
+
+Creates histograms, bar plots, and other visualizations to explore feature distributions and relationships with the target variable.
+models.py:
+
+Provides functions for initializing and training models, such as logistic regression or future advanced models.
+training-logistic.ipynb:
+
+Implements logistic regression, including training, validation, and evaluation.
+Outputs key metrics (accuracy, precision, recall, ROC-AUC) and the trained model.
+performance.ipynb:
+
+Loads trained models and compares their performance on validation and test sets using metrics and visualizations (e.g., ROC curves).
+inference.ipynb:
+
+Applies the trained model to the test dataset and generates a submission.csv file for Kaggle.
+Data Directory (data/):
+
+training.csv: Raw training data with features and target variable.
+test.csv: Test data used for generating final predictions.
+Output Directory (output/):
+
+cleaned_data.csv: Processed dataset ready for model training.
+submission.csv: File with predictions formatted for Kaggle submission.
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
+Required Packages
+The following Python packages are required for this project:
+
+Standard Packages:
+
+pandas: For data manipulation and analysis.
+numpy: For numerical operations.
+matplotlib: For creating visualizations.
+scikit-learn: For machine learning models and evaluation.
+seaborn: For advanced and aesthetic data visualizations.
 
 ### Data
 
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
+Where to Download the Data
+The datasets for this project can be downloaded from the Kaggle challenge page
+After downloading:
+Save the training.csv file in the data/ directory of the project.
+Save the test.csv file in the same directory.
+Preprocessing Steps
+Once the data is downloaded and placed in the data/ directory, follow these steps:
 
+Load the Data:
+
+Open preprocess.ipynb and execute the notebook to load the training.csv and test.csv files.
+Clean the Data:
+
+Handle missing values:
+Replace missing numerical values with the column's median.
+Replace missing categorical values with the most frequent value (mode).
+Drop unnecessary columns, such as unique identifiers (patient_id).
+Rescale Numerical Features:
+
+Apply Min-Max Scaling to transform all numerical features to a range of [0, 1].
+Encode Categorical Features:
+
+Use one-hot encoding to convert categorical variables into binary columns.
+Split the Data:
+
+Divide the cleaned dataset into training (70%), validation (15%), and test (15%) sets.
+Save Preprocessed Data:
+
+The notebook will output a cleaned dataset (cleaned_data.csv) in the output/ directory, ready for model training.
 ### Training
 
-* Describe how to train the model
+Steps to Train the Model
+Prepare the Environment:
+
+Ensure all required packages are installed as described in the Software Setup section.
+Verify that the preprocessed dataset (cleaned_data.csv) is available in the output/ directory.
+Run the Training Notebook:
+
+Open the training-logistic.ipynb notebook.
+Follow these steps within the notebook:
+Load the Preprocessed Data:
+Import the cleaned dataset from the output/ directory.
+Split the Data:
+Split the dataset into training (70%), validation (15%), and test (15%) sets.
+Initialize the Model:
+Use logistic regression from Scikit-Learn, configured with the following settings:
+random_state=42 (for reproducibility).
+max_iter=1000 (to ensure convergence).
+Train the Model:
+Fit the logistic regression model on the training data (X_train and y_train).
+Evaluate the Model:
+Compute metrics such as accuracy, precision, recall, and ROC-AUC on the validation set.
+Adjust hyperparameters (if necessary) based on validation performance.
+Save the Trained Model:
+
+Use Scikit-Learn’s joblib or pickle library to save the trained model for later use
 
 #### Performance Evaluation
 
-* Describe how to run the performance evaluation.
+Steps to Run Performance Evaluation
+Open the Evaluation Notebook:
+
+Launch the training-logistic.ipynb notebook, which includes steps for performance evaluation on the validation set.
+Load the Validation Data:
+
+Ensure the dataset is split into training, validation, and test sets during preprocessing.
+The notebook uses the validation set (X_val and y_val) to assess model performance.
+Run Predictions:
+
+Use the trained logistic regression model to predict outcomes on the validation set:
+python
+Copy code
+y_val_pred = model.predict(X_val)
+y_val_pred_proba = model.predict_proba(X_val)[:, 1]  # For probabilities
+Compute Evaluation Metrics:
+
+Evaluate the model using key metrics:
+Accuracy: Overall correctness of predictions.
+Precision: Proportion of positive predictions that were correct.
+Recall: Proportion of actual positives correctly identified.
+ROC-AUC: Measures the model's ability to distinguish between classes.
+Code snippet:
+python
+Copy code
+from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score, classification_report
+
+print("Validation Metrics:")
+print(f"Accuracy: {accuracy_score(y_val, y_val_pred):.2f}")
+print(f"Precision: {precision_score(y_val, y_val_pred):.2f}")
+print(f"Recall: {recall_score(y_val, y_val_pred):.2f}")
+print(f"ROC-AUC: {roc_auc_score(y_val, y_val_pred_proba):.2f}")
+print("\nClassification Report:")
+print(classification_report(y_val, y_val_pred))
+Visualize Results:
+
+Generate an ROC curve to visualize model performance:
+python
+Copy code
+from sklearn.metrics import roc_curve
+import matplotlib.pyplot as plt
+
+fpr, tpr, thresholds = roc_curve(y_val, y_val_pred_proba)
+plt.figure(figsize=(8, 6))
+plt.plot(fpr, tpr, label=f"ROC Curve (AUC = {roc_auc_score(y_val, y_val_pred_proba):.2f})")
+plt.plot([0, 1], [0, 1], 'k--', label="Random Guess")
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+plt.legend(loc="lower right")
+plt.grid()
+plt.show()
+Interpret the Metrics:
+
+Use metrics to evaluate model performance:
+A high ROC-AUC (> 0.85) indicates strong class separation.
+Compare precision and recall to ensure balanced performance, especially for imbalanced datasets.
+Save Results (Optional):
+
+Save the evaluation metrics and plots for documentation or further analysis.
+
 
 
 ## Citations
