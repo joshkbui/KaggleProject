@@ -242,24 +242,6 @@ y_val_pred = model.predict(X_val)
 y_val_pred_proba = model.predict_proba(X_val)[:, 1]  # For probabilities
 
 
-Visualize Results:
-Generate an ROC curve to visualize model performance:
-python
-Copy code
-from sklearn.metrics import roc_curve
-import matplotlib.pyplot as plt
-
-fpr, tpr, thresholds = roc_curve(y_val, y_val_pred_proba)
-plt.figure(figsize=(8, 6))
-plt.plot(fpr, tpr, label=f"ROC Curve (AUC = {roc_auc_score(y_val, y_val_pred_proba):.2f})")
-plt.plot([0, 1], [0, 1], 'k--', label="Random Guess")
-plt.xlabel("False Positive Rate")
-plt.ylabel("True Positive Rate")
-plt.title("ROC Curve")
-plt.legend(loc="lower right")
-plt.grid()
-plt.show()
-
 Interpret the Metrics:
 Use metrics to evaluate model performance:
 A high ROC-AUC (> 0.85) indicates strong class separation.
