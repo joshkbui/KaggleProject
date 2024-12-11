@@ -23,7 +23,23 @@ Test Set: The remaining 15%, reserved for final evaluation or Kaggle submission.
 
 #### Preprocessing / Clean up
 
-* Describe any manipulations you performed to the data.
+Handling Missing Values:
+
+Identified columns with missing values.
+For numerical features, missing values were replaced with the column's median.
+For categorical features, missing values were replaced with the most frequent value (mode).
+Removing Irrelevant Columns:
+
+Dropped columns that were unnecessary for prediction, such as unique identifiers like patient_id.
+Rescaling Numerical Features:
+
+Applied Min-Max Scaling to transform numerical features to a uniform range of [0, 1], ensuring consistency across features and improving model performance.
+Encoding Categorical Variables:
+
+Applied one-hot encoding to categorical features, converting them into binary columns for compatibility with machine learning models.
+Data Splitting:
+
+Split the data into training (70%), validation (15%), and test (15%) sets to evaluate model performance.
 
 #### Data Visualization
 
@@ -31,11 +47,24 @@ Show a few visualization of the data and say a few words about what you see.
 
 ### Problem Formulation
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
+Input / Output
+Input: The dataset includes clinical and patient features derived from a CSV file. After preprocessing, features consist of both scaled numerical data and one-hot encoded categorical variables.
+Output: The target variable, DiagPeriodL90D, is a binary classification indicating whether a metastatic cancer diagnosis occurred within 90 days (1 = Yes, 0 = No).
+Models
+Logistic Regression:
+This was chosen as the primary model due to its simplicity, interpretability, and effectiveness for binary classification problems.
+Logistic regression provides probabilities for class predictions, which can be further evaluated with metrics like ROC-AUC.
+Why Used:
+Computational efficiency.
+Baseline comparison for future, more complex models.
+Loss, Optimizer, and Hyperparameters
+Loss: Binary cross-entropy loss was implicitly minimized as logistic regression is designed for binary classification.
+Optimizer: Stochastic gradient descent (SGD) is used internally by the logistic regression implementation to minimize the loss.
+Hyperparameters:
+max_iter = 1000: Ensured the algorithm converged by allowing up to 1000 iterations.
+random_state = 42: Ensured reproducibility of results.
+Default settings for learning rate and other parameters were used to focus on achieving a functional baseline result.
+
 
 ### Training
 
