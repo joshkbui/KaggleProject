@@ -153,34 +153,33 @@ Use the model to predict outcomes on the new dataset and evaluate performance.
 ### Overview of files in repository
 
 utils.py:
-
 Contains reusable helper functions for data cleaning, feature engineering, and visualization.
-preprocess.ipynb:
 
+preprocess.ipynb:
 Cleans the raw dataset, handles missing values, scales numerical features, and encodes categorical features.
 Outputs cleaned_data.csv for model training.
+
 visualization.ipynb:
-
 Creates histograms, bar plots, and other visualizations to explore feature distributions and relationships with the target variable.
+
 models.py:
-
 Provides functions for initializing and training models, such as logistic regression or future advanced models.
-training-logistic.ipynb:
 
+training-logistic.ipynb:
 Implements logistic regression, including training, validation, and evaluation.
 Outputs key metrics (accuracy, precision, recall, ROC-AUC) and the trained model.
+
 performance.ipynb:
-
 Loads trained models and compares their performance on validation and test sets using metrics and visualizations (e.g., ROC curves).
+
 inference.ipynb:
-
 Applies the trained model to the test dataset and generates a submission.csv file for Kaggle.
-Data Directory (data/):
 
+Data Directory (data/):
 training.csv: Raw training data with features and target variable.
 test.csv: Test data used for generating final predictions.
-Output Directory (output/):
 
+Output Directory (output/):
 cleaned_data.csv: Processed dataset ready for model training.
 submission.csv: File with predictions formatted for Kaggle submission.
 
