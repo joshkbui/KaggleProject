@@ -55,13 +55,16 @@ Input / Output
 Input: The dataset includes clinical and patient features derived from a CSV file. After preprocessing, features consist of both scaled numerical data and one-hot encoded categorical variables.
 Output: The target variable, DiagPeriodL90D, is a binary classification indicating whether a metastatic cancer diagnosis occurred within 90 days (1 = Yes, 0 = No).
 Models
+
 Logistic Regression:
 This was chosen as the primary model due to its simplicity, interpretability, and effectiveness for binary classification problems.
-Logistic regression provides probabilities for class predictions, which can be further evaluated with metrics like ROC-AUC.
+Logistic regression provides probabilities for class predictions.
+
 Why Used:
 Computational efficiency.
 Baseline comparison for future, more complex models.
 Loss, Optimizer, and Hyperparameters
+
 Loss: Binary cross-entropy loss was implicitly minimized as logistic regression is designed for binary classification.
 Optimizer: Stochastic gradient descent (SGD) is used internally by the logistic regression implementation to minimize the loss.
 Hyperparameters:
