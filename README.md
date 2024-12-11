@@ -64,7 +64,7 @@ Optimizer: Stochastic gradient descent (SGD) is used internally by the logistic 
 Hyperparameters:
 max_iter = 1000: Ensured the algorithm converged by allowing up to 1000 iterations.
 random_state = 42: Ensured reproducibility of results.
-Default settings for learning rate and other parameters were used to focus on achieving a functional baseline result.
+
 
 
 ### Training
