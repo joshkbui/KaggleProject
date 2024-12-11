@@ -113,36 +113,32 @@ Address Class Imbalance: Use techniques like SMOTE or ensemble methods to handle
 
 Feature Engineering: Add new patient features (e.g., medical history) and create interaction features to capture complex patterns.
 
-Validation: Apply cross-validation for robust performance evaluation and test generalization on external datasets.
-
-Broader Studies: Investigate additional outcomes, such as survival rates or treatment efficacy, and analyze feature importance across demographics.
-
 ## How to reproduce results
 
 Setup Environment:
 
 Install required libraries: pandas, numpy, scikit-learn, and matplotlib.
 Use Python 3.8+ for compatibility.
-Obtain Data:
 
+Obtain Data:
 Download the training and test datasets from the Kaggle challenge.
 Run the Code:
 
 Execute the provided preprocessing, model training, and evaluation scripts.
 Ensure the dataset file paths match your environment.
-Expected Output:
 
+Expected Output:
 The model will output performance metrics (accuracy, precision, recall, ROC-AUC) on the validation set and generate predictions for the test set.
 Applying to Other Data
-Preprocess Data:
 
+Preprocess Data:
 Ensure the new dataset has similar feature types (e.g., numerical and categorical).
 Apply the same cleaning steps (e.g., impute missing values, scale numerical features, and one-hot encode categorical features).
+
 Load Model:
-
 Use the trained logistic regression model or train a new model using the provided code.
-Run Inference:
 
+Run Inference:
 Use the model to predict outcomes on the new dataset and evaluate performance.
 
 ### Overview of files in repository
@@ -192,7 +188,6 @@ seaborn: For advanced and aesthetic data visualizations.
 
 ### Data
 
-Where to Download the Data
 The datasets for this project can be downloaded from the Kaggle challenge page
 After downloading:
 Save the training.csv file in the data/ directory of the project.
@@ -209,27 +204,27 @@ Handle missing values:
 Replace missing numerical values with the column's median.
 Replace missing categorical values with the most frequent value (mode).
 Drop unnecessary columns, such as unique identifiers (patient_id).
+
 Rescale Numerical Features:
-
 Apply Min-Max Scaling to transform all numerical features to a range of [0, 1].
+
 Encode Categorical Features:
-
 Use one-hot encoding to convert categorical variables into binary columns.
+
 Split the Data:
-
 Divide the cleaned dataset into training (70%), validation (15%), and test (15%) sets.
-Save Preprocessed Data:
 
+Save Preprocessed Data:
 The notebook will output a cleaned dataset (cleaned_data.csv) in the output/ directory, ready for model training.
 ### Training
 
 Steps to Train the Model
-Prepare the Environment:
 
+Prepare the Environment:
 Ensure all required packages are installed as described in the Software Setup section.
 Verify that the preprocessed dataset (cleaned_data.csv) is available in the output/ directory.
-Run the Training Notebook:
 
+Run the Training Notebook:
 Open the training-logistic.ipynb notebook.
 Follow these steps within the notebook:
 Load the Preprocessed Data:
@@ -245,29 +240,29 @@ Fit the logistic regression model on the training data (X_train and y_train).
 Evaluate the Model:
 Compute metrics such as accuracy, precision, recall, and ROC-AUC on the validation set.
 Adjust hyperparameters (if necessary) based on validation performance.
-Save the Trained Model:
 
+Save the Trained Model:
 Use Scikit-Learn’s joblib or pickle library to save the trained model for later use
 
 #### Performance Evaluation
 
 Steps to Run Performance Evaluation
+
 Open the Evaluation Notebook:
-
 Launch the training-logistic.ipynb notebook, which includes steps for performance evaluation on the validation set.
-Load the Validation Data:
 
+Load the Validation Data:
 Ensure the dataset is split into training, validation, and test sets during preprocessing.
 The notebook uses the validation set (X_val and y_val) to assess model performance.
-Run Predictions:
 
+Run Predictions:
 Use the trained logistic regression model to predict outcomes on the validation set:
 python
 Copy code
 y_val_pred = model.predict(X_val)
 y_val_pred_proba = model.predict_proba(X_val)[:, 1]  # For probabilities
-Compute Evaluation Metrics:
 
+Compute Evaluation Metrics:
 Evaluate the model using key metrics:
 Accuracy: Overall correctness of predictions.
 Precision: Proportion of positive predictions that were correct.
@@ -285,8 +280,8 @@ print(f"Recall: {recall_score(y_val, y_val_pred):.2f}")
 print(f"ROC-AUC: {roc_auc_score(y_val, y_val_pred_proba):.2f}")
 print("\nClassification Report:")
 print(classification_report(y_val, y_val_pred))
-Visualize Results:
 
+Visualize Results:
 Generate an ROC curve to visualize model performance:
 python
 Copy code
@@ -303,13 +298,13 @@ plt.title("ROC Curve")
 plt.legend(loc="lower right")
 plt.grid()
 plt.show()
-Interpret the Metrics:
 
+Interpret the Metrics:
 Use metrics to evaluate model performance:
 A high ROC-AUC (> 0.85) indicates strong class separation.
 Compare precision and recall to ensure balanced performance, especially for imbalanced datasets.
-Save Results (Optional):
 
+Save Results (Optional):
 Save the evaluation metrics and plots for documentation or further analysis.
 
 
