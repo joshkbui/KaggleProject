@@ -2,7 +2,6 @@
 
 # Metastatic Cancer Diagnosis
 
-* 
 This project applies logistic regression to predict diagnoses using the "Metastatic Cancer Diagnosis" dataset from Kaggle, focusing on data cleaning, feature preparation, and performance evaluation.
 ## Overview
 
