@@ -87,11 +87,6 @@ Difficulties
 Class imbalance: Resolved using class weighting.
 Data preparation: Addressed through thorough preprocessing, including scaling and encoding features.
 
-### Performance Comparison
-
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
 
 ### Conclusions
 
