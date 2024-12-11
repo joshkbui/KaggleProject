@@ -110,11 +110,6 @@ Feature Engineering: Add new patient features (e.g., medical history) and create
 
 ## How to reproduce results
 
-Setup Environment:
-
-Install required libraries: pandas, numpy, scikit-learn, and matplotlib.
-Use Python 3.8+ for compatibility.
-
 Obtain Data:
 Download the training and test datasets from the Kaggle challenge.
 Run the Code:
@@ -173,13 +168,6 @@ submission.csv: File with predictions formatted for Kaggle submission.
 Required Packages
 The following Python packages are required for this project:
 
-Standard Packages:
-
-pandas: For data manipulation and analysis.
-numpy: For numerical operations.
-matplotlib: For creating visualizations.
-scikit-learn: For machine learning models and evaluation.
-seaborn: For advanced and aesthetic data visualizations.
 
 ### Data
 
@@ -193,8 +181,8 @@ Once the data is downloaded and placed in the data/ directory, follow these step
 Load the Data:
 
 Open preprocess.ipynb and execute the notebook to load the training.csv and test.csv files.
-Clean the Data:
 
+Clean the Data:
 Handle missing values:
 Replace missing numerical values with the column's median.
 Replace missing categorical values with the most frequent value (mode).
@@ -257,24 +245,6 @@ Copy code
 y_val_pred = model.predict(X_val)
 y_val_pred_proba = model.predict_proba(X_val)[:, 1]  # For probabilities
 
-Compute Evaluation Metrics:
-Evaluate the model using key metrics:
-Accuracy: Overall correctness of predictions.
-Precision: Proportion of positive predictions that were correct.
-Recall: Proportion of actual positives correctly identified.
-ROC-AUC: Measures the model's ability to distinguish between classes.
-Code snippet:
-python
-Copy code
-from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score, classification_report
-
-print("Validation Metrics:")
-print(f"Accuracy: {accuracy_score(y_val, y_val_pred):.2f}")
-print(f"Precision: {precision_score(y_val, y_val_pred):.2f}")
-print(f"Recall: {recall_score(y_val, y_val_pred):.2f}")
-print(f"ROC-AUC: {roc_auc_score(y_val, y_val_pred_proba):.2f}")
-print("\nClassification Report:")
-print(classification_report(y_val, y_val_pred))
 
 Visualize Results:
 Generate an ROC curve to visualize model performance:
