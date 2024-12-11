@@ -59,11 +59,6 @@ Models Logistic Regression:
 This was chosen as the primary model due to its simplicity, interpretability, and effectiveness for binary classification problems.
 Logistic regression provides probabilities for class predictions.
 
-Why Used:
-Computational efficiency.
-Baseline comparison for future, more complex models.
-Loss, Optimizer, and Hyperparameters
-
 Loss: Binary cross-entropy loss was implicitly minimized as logistic regression is designed for binary classification.
 Optimizer: Stochastic gradient descent (SGD) is used internally by the logistic regression implementation to minimize the loss.
 Hyperparameters:
