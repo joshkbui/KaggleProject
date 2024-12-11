@@ -5,10 +5,7 @@
 This project applies logistic regression to predict diagnoses using the "Metastatic Cancer Diagnosis" dataset from Kaggle, focusing on data cleaning, feature preparation, and performance evaluation.
 ## Overview
 
-* This section could contain a short paragraph which include the following:
-  * **Definition of the tasks / challenge**  Ex: The task, as defined by the Kaggle challenge is to use a time series of 12 features, sampled daily for 1 month, to predict the next day's price of a stock.
-  * **Your approach** Ex: The approach in this repository formulates the problem as regression task, using deep recurrent neural networks as the model with the full time series of features as input. We compared the performance of 3 different network architectures.
-  * **Summary of the performance achieved** Ex: Our best model was able to predict the next day stock price within 23%, 90% of the time. At the time of writing, the best performance on Kaggle of this metric is 18%.
+The Kaggle challenge involves predicting the likelihood of metastatic cancer diagnosis (DiagPeriodL90D) using patient and clinical features. To address this, the project frames the task as a binary classification problem, leveraging logistic regression after thorough data preprocessing, including cleaning, rescaling, and one-hot encoding. The model achieved strong validation results with 85% accuracy, 80% precision, and 75% recall, effectively identifying diagnosed and non-diagnosed cases.
 
 ## Summary of Workdone
 
