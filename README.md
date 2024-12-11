@@ -164,10 +164,6 @@ Output Directory (output/):
 cleaned_data.csv: Processed dataset ready for model training.
 submission.csv: File with predictions formatted for Kaggle submission.
 
-### Software Setup
-Required Packages
-The following Python packages are required for this project:
-
 
 ### Data
 
