@@ -5,7 +5,7 @@
 This project applies logistic regression to predict diagnoses using the "Metastatic Cancer Diagnosis" dataset from Kaggle, focusing on data cleaning, feature preparation, and performance evaluation.
 ## Overview
 
-The Kaggle challenge involves predicting the likelihood of metastatic cancer diagnosis (DiagPeriodL90D) using patient and clinical features. To address this, the project frames the task as a binary classification problem, leveraging logistic regression after thorough data preprocessing, including cleaning, rescaling, and one-hot encoding. The model achieved strong validation results with 85% accuracy, 80% precision, and 75% recall, effectively identifying diagnosed and non-diagnosed cases.
+The Kaggle challenge involves predicting the likelihood of metastatic cancer diagnosis (DiagPeriodL90D) using patient and clinical features. To address this, the project frames the task as a binary classification problem, leveraging logistic regression after thorough data preprocessing, including cleaning, rescaling, and one-hot encoding. Logistic Regression was chosen as the primary model due to its simplicity and effectiveness for binary classification problems. Logistic regression provides probabilities for class predictions. The model achieved strong validation results with 85% accuracy, 80% precision, and 75% recall, effectively identifying diagnosed and non-diagnosed cases.
 
 ## Summary of Workdone
 
