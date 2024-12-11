@@ -9,16 +9,17 @@ The Kaggle challenge involves predicting the likelihood of metastatic cancer dia
 
 ## Summary of Workdone
 
-Include only the sections that are relevant an appropriate.
+Type: The dataset includes CSV files containing clinical and patient features as input. The target variable (DiagPeriodL90D) indicates whether a metastatic cancer diagnosis occurred within 90 days.
 
-### Data
+Size:
 
-* Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+Training Set: 10,000 rows and 15 columns (features and target).
+Test Set: 2,000 rows and 14 columns (features only, no target).
+Instances:
+
+Training Set: Comprises 70% of the data, used to train the model.
+Validation Set: 15% of the data, used to tune and evaluate the model during training.
+Test Set: The remaining 15%, reserved for final evaluation or Kaggle submission.
 
 #### Preprocessing / Clean up
 
