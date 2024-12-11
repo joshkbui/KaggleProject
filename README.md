@@ -24,21 +24,20 @@ Test Set: The remaining 15%, reserved for final evaluation or Kaggle submission.
 #### Preprocessing / Clean up
 
 Handling Missing Values:
-
 Identified columns with missing values.
 For numerical features, missing values were replaced with the column's median.
 For categorical features, missing values were replaced with the most frequent value (mode).
+
 Removing Irrelevant Columns:
-
 Dropped columns that were unnecessary for prediction, such as unique identifiers like patient_id.
+
 Rescaling Numerical Features:
-
 Applied Min-Max Scaling to transform numerical features to a uniform range of [0, 1], ensuring consistency across features and improving model performance.
+
 Encoding Categorical Variables:
-
 Applied one-hot encoding to categorical features, converting them into binary columns for compatibility with machine learning models.
-Data Splitting:
 
+Data Splitting:
 Split the data into training (70%), validation (15%), and test (15%) sets to evaluate model performance.
 
 #### Data Visualization
